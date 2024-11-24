@@ -12,7 +12,7 @@ const payement = async (req, res) => {
             currency: "XOF",
             ref_command:  Math.floor(Date.now() / 1000).toString(),
             command_name: `Paiement ${req.body.nom} via PayTech`,
-            env: "test",
+            env: "prod",
             ipn_url: "https://localhost:8080/api/paytech/ipn",
             success_url:"http://localhost:3000",
             cancel_url: "http://localhost:3000"
