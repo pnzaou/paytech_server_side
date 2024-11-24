@@ -14,8 +14,8 @@ const payement = async (req, res) => {
             command_name: `Paiement ${req.body.nom} via PayTech`,
             env: "prod",
             ipn_url: "https://paytech-server-side.onrender.com/api/paytech/ipn",
-            success_url:"http://localhost:3000",
-            cancel_url: "http://localhost:3000"
+            success_url:"https://paytech-client-side.web.app",
+            cancel_url: "https://paytech-client-side.web.app"
         }
         const headers = {
             Accept: "application/json",
