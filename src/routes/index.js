@@ -23,24 +23,29 @@ router.post('/api/paytech/ipn', (req, res) => {
 
     const my_api_key = process.env.PAYTECH_API_KEY 
     const my_api_secret = process.env.PAYTECH_SECRET_KEY
+    
+    console.log("venant api_key", api_key_sha256)
+    console.log("local api_key", my_api_key)
+    console.log("venant api_secret", api_secret_sha256)
+    console.log("local api_secret", my_api_secret)
 
-    if (
-        SHA256Encrypt(my_api_secret) === api_secret_sha256 &&
-        SHA256Encrypt(my_api_key) === api_key_sha256
-    ) {
-        if (type_event === 'sale_complete') {
-            console.log(`Paiement réussi pour la commande ${ref_command}`);
-            // Traitez la commande : marquez-la comme "payée"
-        } else if (type_event === 'sale_canceled') {
-            console.log(`Paiement annulé pour la commande ${ref_command}`);
-            // Traitez l'annulation : marquez-la comme "annulée"
-        }
+    // if (
+    //     SHA256Encrypt(my_api_secret) === api_secret_sha256 &&
+    //     SHA256Encrypt(my_api_key) === api_key_sha256
+    // ) {
+    //     if (type_event === 'sale_complete') {
+    //         console.log(`Paiement réussi pour la commande ${ref_command}`);
+    //         // Traitez la commande : marquez-la comme "payée"
+    //     } else if (type_event === 'sale_canceled') {
+    //         console.log(`Paiement annulé pour la commande ${ref_command}`);
+    //         // Traitez l'annulation : marquez-la comme "annulée"
+    //     }
 
-        res.status(200).send("Notification reçue avec succès");
-    } else {
-        console.error("Notification non autorisée !");
-        res.status(403).send("Non autorisé");
-    }
+    //     res.status(200).send("Notification reçue avec succès");
+    // } else {
+    //     console.error("Notification non autorisée !");
+    //     res.status(403).send("Non autorisé");
+    // }
 })
 
 module.exports = router
