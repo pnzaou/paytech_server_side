@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.post("/api/payement", payement)
 router.post('/api/paytech/ipn', (req, res) => {
-    console.log(req)
+    console.log("CLG de la requête : ", req)
     const SHA256Encrypt = (password) => {
         let crypto = require('crypto')
         let sha256 = crypto.createHash('sha256')
