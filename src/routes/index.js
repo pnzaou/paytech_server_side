@@ -29,7 +29,7 @@ router.post('/api/paytech/ipn', (req, res) => {
     console.log("venant api_secret", api_secret_sha256)
     console.log("local api_secret", my_api_secret)
     console.log("LE BODY", req.body)
-    return
+    return res.status(200)
 
     // if (
     //     SHA256Encrypt(my_api_secret) === api_secret_sha256 &&
