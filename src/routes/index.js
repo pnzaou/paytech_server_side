@@ -30,6 +30,7 @@ router.post('/api/paytech/ipn', (req, res) => {
     console.log("local api_secret", my_api_secret)
     console.log("LE BODY", req.body)
     return res.status(200).json({message: "Fin du test."})
+    
 
     // if (
     //     SHA256Encrypt(my_api_secret) === api_secret_sha256 &&
