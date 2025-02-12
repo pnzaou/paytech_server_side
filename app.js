@@ -16,4 +16,5 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
     console.log(`cliquez sur http://localhost:${8080}`)
+    console.log(bodyParser)
 })
