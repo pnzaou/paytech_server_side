@@ -7,8 +7,8 @@ const port = 8080
 
 app
     .use(cors())
-    .use(bodyParser.json())
-    .use(bodyParser.urlencoded({ extended: true }))
+    .use(express.json())
+    .use(express.urlencoded({ extended: true }))
     .use(router)
 
 app.get("/", (req, res) => {
