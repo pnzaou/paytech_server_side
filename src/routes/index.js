@@ -72,6 +72,7 @@ router.post('/api/paytech/ipn', async (req, res) => {
             res.status(403).send("Non autorisé")
         }
     } catch (error) {
+        console.log(error)
         return res.status(500).json({
             message: 'Une erreur est survenue veuillez réessayer.', 
             erreur: true,
