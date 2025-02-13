@@ -18,11 +18,11 @@ router.post('/api/paytech/ipn', async (req, res) => {
 
     const {
         type_event,
-        ref_command,
-        item_name,
+        custom_field,
         item_price,
+        payment_method,
         api_key_sha256,
-        api_secret_sha256,
+        api_secret_sha256
     } = req.body
 
     const my_api_key = process.env.PAYTECH_API_KEY 
