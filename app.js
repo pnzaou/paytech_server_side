@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const router = require('./src/routes')
 const bodyParser = require("body-parser")
+const connexion = require('./src/db/db')
 const app = express()
 const port = 8080
 
@@ -17,4 +18,5 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
     console.log(`cliquez sur http://localhost:${8080}`)
+    connexion()
 })
